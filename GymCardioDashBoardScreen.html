@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cardio Training Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13ec49",
+            "background-light": "#f6f8f6",
+            "background-dark": "#102215",
+          },
+          fontFamily: {
+            "display": ["Lexend", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    .path-line {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: calc(100% - 2rem);
+      background-image: repeating-linear-gradient(to bottom, #dbe6de, #dbe6de 8px, transparent 8px, transparent 16px);
+      z-index: 0;
+    }
+    .dark .path-line {
+      background-image: repeating-linear-gradient(to bottom, #374151, #374151 8px, transparent 8px, transparent 16px);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex min-h-screen w-full">
+<aside class="flex-col bg-white dark:bg-gray-900/50 border-r border-gray-200 dark:border-gray-800 p-4 w-64 hidden lg:flex">
+<div class="flex h-full min-h-[700px] flex-col justify-between">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3 px-3">
+<span class="material-symbols-outlined text-primary text-3xl">exercise</span>
+<h1 class="text-xl font-bold text-gray-900 dark:text-white">FitQuest</h1>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAw9aI6P4bXqksjNN5wfVjQjtZjxL6eE43wwwLswHGLWNRtvutsAfEIr7VWt7OQu1Pujb3mAGwUHP5WzHD6Cu1bBgNHrrm1tk4fHGDtXkvPW95oepd1puAZ_rRyoZdeAARWPhIawTikvHsak8KWrOr9oJDB4LrTHGELLCrlxMY-ANQuz-1vGw1ViGLIk2K9z2XGD9nixoB_lGSb2J51Hq46dBPoMeCgAJlTRfC40EbGKNEBE5vYfJ7Olu7lrhYcBaoCiDo4NsUWCB9s");'></div>
+<div class="flex flex-col">
+<h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Alex Doe</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Level 12</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-full bg-primary/20" href="#">
+<span class="material-symbols-outlined fill text-gray-900 dark:text-white">dashboard</span>
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">person</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Profile</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">leaderboard</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Leaderboards</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">settings</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">logout</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Log Out</p>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
+<div class="grid grid-cols-12 gap-6 h-full">
+<div class="col-span-12 lg:col-span-3">
+<div class="sticky top-6 flex flex-col gap-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2 rounded-lg p-4 bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800">
+<p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">Distance</p>
+<div class="flex items-baseline gap-1">
+<p class="text-gray-900 dark:text-white tracking-light text-2xl font-bold leading-tight">5.2</p>
+<span class="text-gray-500 dark:text-gray-400 text-sm font-medium">km</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-lg p-4 bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800">
+<p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">Time</p>
+<div class="flex items-baseline gap-1">
+<p class="text-gray-900 dark:text-white tracking-light text-2xl font-bold leading-tight">45</p>
+<span class="text-gray-500 dark:text-gray-400 text-sm font-medium">min</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 rounded-lg p-4 flex flex-col gap-4">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Daily Cardio Goals</h3>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Run 3km</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs font-normal leading-normal">3/3 km</p>
+</div>
+<div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2">
+<div class="h-2 rounded-full bg-primary" style="width: 100%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Burn 250 Calories</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs font-normal leading-normal">180/250</p>
+</div>
+<div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2">
+<div class="h-2 rounded-full bg-primary" style="width: 72%;"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">30 Mins of Activity</p>
+<p class="text-gray-500 dark:text-gray-400 text-xs font-normal leading-normal">22/30</p>
+</div>
+<div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2">
+<div class="h-2 rounded-full bg-primary" style="width: 73%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-6">
+<div class="flex flex-col items-center gap-4 text-center">
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white">Endurance Builder</h2>
+<p class="text-gray-600 dark:text-gray-400 max-w-md">Push your limits and improve your stamina with these cardio-focused workouts.</p>
+</div>
+<div class="relative mt-12 flex flex-col items-center">
+<div class="path-line"></div>
+<div class="relative z-10 flex flex-col items-center gap-2 mb-16 w-full">
+<button class="size-16 rounded-full bg-primary flex items-center justify-center border-4 border-white dark:border-background-dark ring-4 ring-primary/50">
+<span class="material-symbols-outlined text-white text-3xl">check</span>
+</button>
+<p class="font-semibold text-gray-800 dark:text-gray-200">Warm-up Jog</p>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 mb-16 w-full max-w-xs text-center">
+<button class="size-20 rounded-full bg-primary flex items-center justify-center border-4 border-white dark:border-background-dark ring-8 ring-primary/30 animate-pulse">
+<span class="material-symbols-outlined text-white text-4xl">play_arrow</span>
+</button>
+<div class="flex flex-col gap-2">
+<p class="text-lg font-bold text-gray-900 dark:text-white">Interval Sprints</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">20 min • 30 XP</p>
+<button class="mt-2 w-full px-6 py-3 bg-primary text-black font-bold rounded-full text-base hover:bg-opacity-90 transition-all">Start Workout</button>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 mb-16 w-full opacity-50">
+<button class="size-16 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center border-4 border-white dark:border-background-dark">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-3xl">lock</span>
+</button>
+<p class="font-semibold text-gray-500 dark:text-gray-400">Hill Climb Challenge</p>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-4 mb-16 w-full">
+<div class="size-24 rounded-full bg-amber-400 flex items-center justify-center border-4 border-white dark:border-background-dark ring-4 ring-amber-400/50">
+<span class="material-symbols-outlined text-white text-5xl">workspace_premium</span>
+</div>
+<div class="text-center">
+<p class="text-lg font-bold text-amber-500 dark:text-amber-400">New PB Unlocked!</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">5k Time Improved</p>
+</div>
+</div>
+<div class="relative z-10 flex flex-col items-center gap-2 w-full opacity-50">
+<button class="size-16 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center border-4 border-white dark:border-background-dark">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-3xl">lock</span>
+</button>
+<p class="font-semibold text-gray-500 dark:text-gray-400">Long Distance Run</p>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-3">
+<div class="sticky top-6 flex flex-col gap-6">
+<div class="bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 rounded-lg p-4 flex flex-col gap-4">
+<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Weekly League</h3>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<span class="font-bold text-gray-500 w-5 text-center">1</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoFwZCOIMljylwSEe-JJMNngBQZkZ6Heb9jWC__ne3fLCQRk_lJABT827oUZcR4jeOJZFkhOuZs3vlaQUQlFs0iAYNHXv6pB3SpLwVg4gdNvKlMgBivbn8Zu0N-YEOU4nFZ4Hi4vfDmGehsC1ilxuIRVQNGSQipQnJ5btgKVsRCMtTqzr_eo61Z1zKDb8xAEHWHvNtYveEC_Z6BRpkZDLwVLkjQNld1OF-Tmb6INjz89j0CNqKnpaYKexn1OfwGaNaMGi3l8bh6qhF");'></div>
+<div class="flex-1">
+<p class="text-sm font-medium text-gray-800 dark:text-gray-200">Maria S.</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">2150 XP</p>
+</div>
+</li>
+<li class="flex items-center gap-3">
+<span class="font-bold text-gray-500 w-5 text-center">2</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCIK29dBslriAJnWGhD2Ypo5EFOZqXDtUGs1ej7BVItQqqzk_pJIcEjyh0DGltyWnAjMRR5N3sIKuJHmGZwWCbu1_5Rg2IdjS4rgbNiANgKvxvnMfvFPEmLZHxHlLk3mmOXN3QX7QAt3PBSDAEvSXNWSA_iEJqg0ULmobvABh3l0xcboJcOfNu95h9PlEDzZ3y-G1eS8NdM7aEQr3FIYPMu05wUQmHcmydS_-S33TRPc9QyEoQ2OY7upv9b0NX8HzqYy-amKM87pUuh");'></div>
+<div class="flex-1">
+<p class="text-sm font-medium text-gray-800 dark:text-gray-200">Ken J.</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">1890 XP</p>
+</div>
+</li>
+<li class="flex items-center gap-3 bg-primary/20 p-2 rounded-lg">
+<span class="font-bold text-primary w-5 text-center">3</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 ring-2 ring-primary" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBtkLdm4_6Suda9WHaC_szFnlhOlTYLG4PjgttKn-5Q7wKFioAPWyrqUyhHY9YZ1aKJndQlWh-VGnt2AyqrmmufDCo0wgurHkU_kIROPjdeKRhA_tie3MJ8BjKe4cIhMymkdd-TtjyZXJ-GyvoV5PG2TUwdiNWmKo_Ig6HNBo7-I61eYmlEr7Ff2bPkkTVHTxf_fx6gcbZODLgn3buDMprskhO8Z9-PObA2ooJiMYy7VyRH6O38lbcucektgwqv4JwTUQYihp469-2V");'></div>
+<div class="flex-1">
+<p class="text-sm font-bold text-gray-900 dark:text-white">You</p>
+<p class="text-xs text-gray-600 dark:text-gray-300">1450 XP</p>
+</div>
+</li>
+<li class="flex items-center gap-3">
+<span class="font-bold text-gray-500 w-5 text-center">4</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6Lmy-82aoFmSpekq7_zKfxcyWHnGrXNHWDLfdtdmN4IB1zuZwtmu14LD0hh5vKeaFo2UYB-chQ2duaU-RkoojLr9JcJC0_dqKjrGiatxmUpyaLPwu9s7efb30QoNhdb4gujFjgnVnsPGKAqm19cf-gSlUV6bHYZkebbAraYB-GFWFgpAP17BKjnCFdvTfXwQNJciJ3gLFP1YQyVyCYdefeIDJ0_FvLY-05RGs95GrOp6xkEESEgMkGgK_bHBBfNAwqQDDrIui6yd6");'></div>
+<div class="flex-1">
+<p class="text-sm font-medium text-gray-800 dark:text-gray-200">Lena P.</p>
+<p class="text-xs text-gray-500 dark:text-gray-400">1230 XP</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

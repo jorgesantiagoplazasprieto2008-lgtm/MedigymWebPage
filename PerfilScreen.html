@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings - FitQuest</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec49",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102215",
+              "card-light": "#ffffff",
+              "card-dark": "#182c1e",
+              "text-light": "#111813",
+              "text-dark": "#f0f4f1",
+              "subtext-light": "#61896b",
+              "subtext-dark": "#a2bba9",
+              "border-light": "#dbe6de",
+              "border-dark": "#2a4b36",
+              "destructive": "#ef4444",
+              "destructive-hover": "#dc2626",
+              "secondary-light": "#e0e5e2",
+              "secondary-dark": "#2a4b36",
+              "secondary-hover-light": "#d1d8d4",
+              "secondary-hover-dark": "#396047",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-card-dark border-r border-border-light dark:border-border-dark">
+<div class="flex h-full flex-col p-4">
+<div class="flex items-center gap-2 px-3 pb-6">
+<span class="material-symbols-outlined text-primary text-3xl">exercise</span>
+<span class="text-xl font-bold">FitQuest</span>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture of a person working out." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5nG6LCo5-XN8SzFmL_GHwDIcRoILQS1U_0GYQg0kazzRMk0lDf0Rj31eT_Biv93oyPH4mpE416mIrYn83Xl77htH0JCvvSXgXDH-G9byNmN1q2zHGcEdEvZQ8tRhclUf-db6EEtqhPTnbjt_pTxaaevzdjCd0GwH7gd7XIbHacOgYscrnwYQ_MdcADHidx7ly9Q2ee_MSfhY7CnhUNQjCStB45TSujncLipBqNySRt6e9yR4OM6kvYonWJLfibQ3kVWxPVmAI7pOU");'></div>
+<div class="flex flex-col">
+<h1 class="text-base font-medium leading-normal text-text-light dark:text-text-dark">Alex Trainer</h1>
+<p class="text-sm font-normal leading-normal text-subtext-light dark:text-subtext-dark">alex.trainer@email.com</p>
+</div>
+</div>
+<div class="flex flex-col gap-1 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark" style="font-variation-settings: 'FILL' 1;">person</span>
+<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">My Profile</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">lock</span>
+<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Account &amp; Security</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">notifications</span>
+<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Notifications</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">tune</span>
+<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Preferences</p>
+</a>
+</div>
+</div>
+<div class="mt-auto flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors" href="#">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark">logout</span>
+<p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Log Out</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="max-w-4xl mx-auto">
+<!-- PageHeading -->
+<div class="mb-8">
+<h1 class="text-4xl font-black leading-tight tracking-[-0.033em]">My Profile</h1>
+</div>
+<!-- Profile Card -->
+<div class="bg-white dark:bg-card-dark rounded-xl border border-border-light dark:border-border-dark p-6 mb-8">
+<!-- ProfileHeader -->
+<div class="flex flex-col gap-6 @container md:flex-row md:items-center md:justify-between pb-6 border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-5">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-24 h-24 flex-shrink-0" data-alt="User profile picture of a person working out." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQWvWoFKFbs8oOtzlTsG3MNQC4_jxpLfXcBpdetaNfg1IMdvmEFQRypP5U7vH2aNL5dySADmwaLa4rDzB3QDdLFgbQeyUVirK3OINeXRsGQU_dhthVq6c33e4RZNjPqWol2XwJsLJoGX-ox97AubIPLmO_FNkiS5rdE9OVHSLL52OsvDe9yxoH4hrGdTsVGGhCmJ3jeII_T-wYhRU5QI4gEWrSj1cwnHDQ0PLmtMxUUGEa24g0dYafug6p8uEaANI6p3hUgnCnbXq7");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-[22px] font-bold leading-tight tracking-[-0.015em]">Alex Trainer</p>
+<p class="text-base font-normal leading-normal text-subtext-light dark:text-subtext-dark">alex.trainer</p>
+</div>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-secondary-light dark:bg-secondary-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-secondary-hover-light dark:hover:bg-secondary-hover-dark transition-colors md:w-auto">
+<span class="truncate">Upload new picture</span>
+</button>
+</div>
+<!-- Form Section -->
+<div class="pt-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Full Name TextField -->
+<label class="flex flex-col">
+<p class="text-base font-medium leading-normal pb-2">Full Name</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary/50 h-14 placeholder:text-subtext-light dark:placeholder:text-subtext-dark p-[15px] text-base font-normal leading-normal" value="Alex Trainer"/>
+</label>
+<!-- Username TextField -->
+<label class="flex flex-col">
+<p class="text-base font-medium leading-normal pb-2">Username</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary/50 h-14 placeholder:text-subtext-light dark:placeholder:text-subtext-dark p-[15px] text-base font-normal leading-normal" value="alex.trainer"/>
+</label>
+</div>
+<!-- Bio Textarea -->
+<div class="mt-6">
+<label class="flex flex-col">
+<p class="text-base font-medium leading-normal pb-2">Bio</p>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary/50 h-28 placeholder:text-subtext-light dark:placeholder:text-subtext-dark p-[15px] text-base font-normal leading-normal" placeholder="Tell us a little about yourself...">Certified personal trainer with 5+ years of experience helping clients achieve their fitness goals through personalized plans and motivation.</textarea>
+</label>
+</div>
+</div>
+</div>
+<!-- Fitness Goals Card -->
+<div class="bg-white dark:bg-card-dark rounded-xl border border-border-light dark:border-border-dark p-6 mb-8">
+<h2 class="text-xl font-bold pb-4 border-b border-border-light dark:border-border-dark mb-6">Fitness &amp; Experience</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Experience Level Dropdown -->
+<label class="flex flex-col">
+<p class="text-base font-medium leading-normal pb-2">Experience Level</p>
+<select class="form-select flex w-full min-w-0 flex-1 overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary/50 h-14 p-[15px] text-base font-normal leading-normal appearance-none bg-no-repeat bg-right-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGhNx2eL496NU2R3izPvAAkPNUfzP1GoQSRG8TJmtO80rL0xICmNlYKbeEM5fByX6bj5jsc5lqaxuG9fBQ72tEi-kEymxpoggIWs2hOXn0a1x7bbAEoRh5H8ptPRYJOsurvD3bfuE3t0ZcdN0c-8Pb3RHfxefbPGho9SdVqa6hc1NpfBBuc7ql5M64611KeJ94BwNHEdN8KLdrLJrph_vQOwdD3302dpblNrwxsXkjAIUzi2POoaV5pOEHYRXP0rCbxqgGzS7poiec");'>
+<option>Beginner</option>
+<option selected="">Intermediate</option>
+<option>Advanced</option>
+</select>
+</label>
+<!-- Measurement Units Dropdown -->
+<label class="flex flex-col">
+<p class="text-base font-medium leading-normal pb-2">Measurement Units</p>
+<select class="form-select flex w-full min-w-0 flex-1 overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary/50 h-14 p-[15px] text-base font-normal leading-normal appearance-none bg-no-repeat bg-right-4" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDGhNx2eL496NU2R3izPvAAkPNUfzP1GoQSRG8TJmtO80rL0xICmNlYKbeEM5fByX6bj5jsc5lqaxuG9fBQ72tEi-kEymxpoggIWs2hOXn0a1x7bbAEoRh5H8ptPRYJOsurvD3bfuE3t0ZcdN0c-8Pb3RHfxefbPGho9SdVqa6hc1NpfBBuc7ql5M64611KeJ94BwNHEdN8KLdrLJrph_vQOwdD3302dpblNrwxsXkjAIUzi2POoaV5pOEHYRXP0rCbxqgGzS7poiec");'>
+<option>Metric (kg, km)</option>
+<option selected="">Imperial (lbs, miles)</option>
+</select>
+</label>
+<!-- Goal TextField -->
+<label class="flex flex-col md:col-span-2">
+<p class="text-base font-medium leading-normal pb-2">Primary Goal</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary/50 h-14 placeholder:text-subtext-light dark:placeholder:text-subtext-dark p-[15px] text-base font-normal leading-normal" value="Build Muscle"/>
+</label>
+</div>
+</div>
+<!-- Page Actions -->
+<div class="flex justify-end gap-3 mt-8">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-secondary-light dark:bg-secondary-dark text-text-light dark:text-text-dark text-base font-bold leading-normal hover:bg-secondary-hover-light dark:hover:bg-secondary-hover-dark transition-colors">
+<span class="truncate">Cancel</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-black text-base font-bold leading-normal hover:bg-opacity-85 transition-colors">
+<span class="truncate">Save Changes</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

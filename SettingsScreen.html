@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Ranking Leaderboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec49",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102215",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-slate-200/80 dark:border-slate-800/80 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-10 py-3">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-primary text-3xl">directions_run</span>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">FitLeap</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-sm font-medium leading-normal text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white" href="#">Dashboard</a>
+<a class="text-sm font-medium leading-normal text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white" href="#">Workouts</a>
+<a class="text-sm font-bold leading-normal text-slate-900 dark:text-white" href="#">Leaderboard</a>
+<a class="text-sm font-medium leading-normal text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white" href="#">Community</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-xl">settings</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCiBPpKZwebtiKf7BaKBMHw9JKB0mJxC9KfDZ2btoqEQFEgu-o3orzBZ9OH0aWerZsPHWykm4vphTpomIB0FToGCcx_OFbLyWWXQ8GZrdGWal4zkn37qJXRAkqbcz5DPmg1WnE9tQaC8wDPwdox0idF5T-tDZOg1Xt1pvBdVBVPhlVxzDTbRoJddsKE7qHUOMi07Vqc_lYo-LpErqWmq6C0Qmftc1RH7MUUFpOr7JpWghKyJYXdHm30vfh0LALMwPLcrJwzpAhxPeuf");'></div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-7xl mx-auto p-4 md:p-6 lg:p-8">
+<div class="grid grid-cols-12 gap-6">
+<!-- Left Sidebar -->
+<aside class="col-span-12 lg:col-span-3">
+<div class="sticky top-24 flex flex-col gap-6">
+<!-- SideNavBar (modified for filters) -->
+<div class="flex h-full flex-col justify-between bg-white dark:bg-background-dark p-4 rounded-lg border border-slate-200/80 dark:border-slate-800/80">
+<div class="flex flex-col gap-4">
+<p class="text-xs font-bold uppercase text-slate-500 dark:text-slate-400 px-3">Leaderboards</p>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-full bg-primary/20 text-slate-900 dark:text-white" href="#">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">public</span>
+<p class="text-sm font-medium leading-normal">Global</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/50 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<p class="text-sm font-medium leading-normal">Friends</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/50 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white" href="#">
+<span class="material-symbols-outlined text-xl">location_city</span>
+<p class="text-sm font-medium leading-normal">Local</p>
+</a>
+</div>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-col gap-4 bg-white dark:bg-background-dark p-4 rounded-lg border border-slate-200/80 dark:border-slate-800/80">
+<p class="text-xs font-bold uppercase text-slate-500 dark:text-slate-400">Time Frame</p>
+<!-- Chips (modified as dropdowns/buttons) -->
+<div class="flex flex-col gap-2">
+<button class="flex h-10 w-full shrink-0 items-center justify-between gap-x-2 rounded-full bg-background-light dark:bg-slate-800/50 px-4 border border-slate-200/80 dark:border-slate-800">
+<p class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal">This Week</p>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-xl">arrow_drop_down</span>
+</button>
+<button class="flex h-10 w-full shrink-0 items-center justify-between gap-x-2 rounded-full bg-background-light dark:bg-slate-800/50 px-4 border border-slate-200/80 dark:border-slate-800">
+<p class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal">All Time</p>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-xl">arrow_drop_down</span>
+</button>
+</div>
+<hr class="border-slate-200/80 dark:border-slate-800/80 my-2"/>
+<!-- SegmentedButtons -->
+<p class="text-xs font-bold uppercase text-slate-500 dark:text-slate-400">Metric</p>
+<div class="flex h-10 w-full items-center justify-center rounded-full bg-background-light dark:bg-slate-800/50 p-1 border border-slate-200/80 dark:border-slate-800">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-primary has-[:checked]:shadow-md has-[:checked]:text-white text-slate-600 dark:text-slate-400 dark:has-[:checked]:text-slate-900 text-sm font-medium leading-normal transition-all duration-200">
+<span class="truncate">Points</span>
+<input checked="" class="invisible w-0" name="metric_selector" type="radio" value="Points"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-primary has-[:checked]:shadow-md has-[:checked]:text-white text-slate-600 dark:text-slate-400 dark:has-[:checked]:text-slate-900 text-sm font-medium leading-normal transition-all duration-200">
+<span class="truncate">Workouts</span>
+<input class="invisible w-0" name="metric_selector" type="radio" value="Workouts"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-primary has-[:checked]:shadow-md has-[:checked]:text-white text-slate-600 dark:text-slate-400 dark:has-[:checked]:text-slate-900 text-sm font-medium leading-normal transition-all duration-200">
+<span class="truncate">Time</span>
+<input class="invisible w-0" name="metric_selector" type="radio" value="Time"/>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<section class="col-span-12 lg:col-span-6">
+<div class="flex flex-col gap-6">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between items-baseline gap-3 p-4">
+<h1 class="text-4xl font-black leading-tight tracking-tighter text-slate-900 dark:text-white">Global Leaderboard</h1>
+<p class="text-slate-500 dark:text-slate-400 font-medium">This Week</p>
+</div>
+<!-- Leaderboard Table -->
+<div class="flex flex-col gap-3">
+<!-- Top 3 -->
+<div class="flex justify-center items-end gap-2 px-4 py-6">
+<!-- 2nd Place -->
+<div class="relative flex flex-col items-center gap-2 p-4 rounded-lg bg-slate-200 dark:bg-slate-800 w-1/3">
+<span class="absolute -top-3 text-3xl">🥈</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-16 border-4 border-slate-200 dark:border-slate-800" data-alt="User avatar for Sofia Garcia" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDzTSye8cyWDScUdEX3CHH8xwPTUzUtC_Uc5OZqoqlAaG2XduTXe4scLhAwSaPqTOClDNVDqAm4WYxdjUhSbqGEJ_OgLbbX2-7_DXfXGBAwSKJfG3EWWS03bhoKGsRj9yYw5-CpgLinD27itvOlhthsLtfgCU0K8D-2LntkxK4TZlTTDLjj0dZChSBi-Fqu9SBRd74ndKo8VAdXIZ43l1oTgQrxh28FEqCQFl8un8zUzTYVEKmkpmjbinmxnw1RtworRNiV3pUUvnm")'></div>
+<p class="font-bold text-slate-900 dark:text-white text-center">Sofia Garcia</p>
+<p class="text-sm text-primary font-semibold">11,800 XP</p>
+</div>
+<!-- 1st Place -->
+<div class="relative flex flex-col items-center gap-2 p-6 rounded-t-lg bg-amber-300/50 dark:bg-amber-500/30 w-1/3 shadow-lg">
+<span class="absolute -top-4 text-4xl">🥇</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-20 border-4 border-amber-300/80 dark:border-amber-500/50" data-alt="User avatar for Liam Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBn5Bv3ENQ9UIUZ-Wmuoo3uLu0UYX1DZvy78QpRTtDQJ9nKQLvWMDVbIte27lftmwTK0FcbmtuyapCNykGx_ycAdmrMChV7U1noixqgRAeNBF4s_njO1xEMiTANVNAg-T7cJan8oM31yWujzuXuw9tpI1L5krUM5hOELGJ4CdFxWoVR08HdaWqsKg_irh91kQqb0ms49G8M2uSZmmiUlj0nBPFb0Eml9HEajDqmbqufYIMUYnV7oKtcvYnKMXzTA0r9NoOA7a3I0pJ")'></div>
+<p class="font-bold text-slate-900 dark:text-white text-center">Liam Chen</p>
+<p class="text-base text-amber-600 dark:text-amber-300 font-bold">12,500 XP</p>
+</div>
+<!-- 3rd Place -->
+<div class="relative flex flex-col items-center gap-2 p-4 rounded-lg bg-orange-200 dark:bg-orange-900/40 w-1/3">
+<span class="absolute -top-3 text-3xl">🥉</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-16 border-4 border-orange-200 dark:border-orange-900/40" data-alt="User avatar for Olivia Martinez" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCbiFDaCbAsLHQ6gnlO0_Vtq54C9-6-92FxO1jSfgP-NE63-E6FBkllzsAfgZhO6y2NFfuk3OgR4QtfZtuV8hKRlNKgjvSYEhyrNR-pwkLkDqlZUHUktvzZFov_bwAqaBZ1Na3GNOp6TwyZTF_smp7FnRmXZwetJqtC0ZWClNoTtBEG6zc_5TwYUKQnX0FviozxLVV25fUGwRZaC3h4RFHyb-9a93wxcQs_UiyAbwdGctSEUYwV6rgOEVRXd1bPbBxiaYyRRcVV7j0m")'></div>
+<p class="font-bold text-slate-900 dark:text-white text-center">Olivia Martinez</p>
+<p class="text-sm text-orange-600 dark:text-orange-400 font-semibold">11,250 XP</p>
+</div>
+</div>
+<!-- Ranks 4+ -->
+<div class="flex flex-col gap-2">
+<div class="grid grid-cols-12 items-center p-3 gap-4 rounded-lg bg-white dark:bg-background-dark border border-slate-200/80 dark:border-slate-800/80">
+<p class="col-span-1 text-center font-bold text-slate-500 dark:text-slate-400">4</p>
+<div class="col-span-6 flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar for Noah Patel" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8Y5oqFqSrYHLwp3TbUqQ_lN6Q2nnT2ffrTW0SKoGlFpyzpBSpgmQ7pzN_YyJF8a_8e8VE1jet5e6Vw45ihsQw0tVFhW_8ZBQFQ9VaR8MU5Tzk9-i_Mqp5O3NQcFCe_5oE3kg4GcSlN7eqAh3HO4j39qqeX79g9oa343NJix8YnOV43QJkWGZ-X_23lIHC8T2kNPaKrGqwAtUUpQClz65qjkhXykSHSXJWvh0mAKWOd6Wa3gArcfWgCXbnS8C8NDzn0gX-9j2zfPrZ")'></div>
+<p class="font-medium text-slate-800 dark:text-slate-200">Noah Patel</p>
+</div>
+<p class="col-span-4 text-right font-semibold text-slate-900 dark:text-white">10,980 XP</p>
+<div class="col-span-1 flex justify-end text-green-500"><span class="material-symbols-outlined">arrow_drop_up</span></div>
+</div>
+<div class="grid grid-cols-12 items-center p-3 gap-4 rounded-lg bg-primary/20 dark:bg-primary/20 border-2 border-primary">
+<p class="col-span-1 text-center font-bold text-slate-500 dark:text-slate-400">5</p>
+<div class="col-span-6 flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Your avatar, Alex Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC00YJKbTBPtMLNJpV8EchuwAKgxh-FTWSU8kp_iT8wN-DDdxKS7UuE7dcsepD3fHv0weBcDUO6xAuiF7FSskgxlAZO7qo1hAhHmWpynwRBfLi3eUd6EPKKEo2a-A652ulV50XzWQKeMsHi-nWqyD35mJALv-TK7L0xGTwE8_tAlpo4JxU4WOdLOLZ5Vb2htEuUg-mJXKvU0n0on0UFC5uelzpThgFGejRPTHEiya1vGE3pjhB74SwVxI4Xs8t1M1hOihqEXZ9qDjF7")'></div>
+<p class="font-bold text-slate-900 dark:text-white">You (Alex Doe)</p>
+</div>
+<p class="col-span-4 text-right font-bold text-slate-900 dark:text-white">10,500 XP</p>
+<div class="col-span-1 flex justify-end text-red-500"><span class="material-symbols-outlined">arrow_drop_down</span></div>
+</div>
+<div class="grid grid-cols-12 items-center p-3 gap-4 rounded-lg bg-white dark:bg-background-dark border border-slate-200/80 dark:border-slate-800/80">
+<p class="col-span-1 text-center font-bold text-slate-500 dark:text-slate-400">6</p>
+<div class="col-span-6 flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar for Emma Nguyen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDI8n7L45GnK-A2A8FNDOBLLHmX-9JNFeMTpZ_FzE-UsPqPnFVPEOSlgoZqvcDz9Xgdo5yhbdqR7XKy3JJX37SDAFx2cMW-nK0rBXgA_KHYhbNA-uv4LfaXTzNWNXSMDS44sWW15-45iMoznGuhIjnpaL1dcgQLcltAqdlIziMNKmYD1WNQ_LfKOgHBiXpIsnbi0VjtvBAaVkfz0wL6OVDHQ3xfnSqzxhGwMlNZY-BP8krBjgg8PVrvNO8n6XXkyC9tpyHxRx0iDbZK")'></div>
+<p class="font-medium text-slate-800 dark:text-slate-200">Emma Nguyen</p>
+</div>
+<p class="col-span-4 text-right font-semibold text-slate-900 dark:text-white">10,450 XP</p>
+<div class="col-span-1 flex justify-end text-green-500"><span class="material-symbols-outlined">arrow_drop_up</span></div>
+</div>
+<div class="grid grid-cols-12 items-center p-3 gap-4 rounded-lg bg-white dark:bg-background-dark border border-slate-200/80 dark:border-slate-800/80">
+<p class="col-span-1 text-center font-bold text-slate-500 dark:text-slate-400">7</p>
+<div class="col-span-6 flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar for James Smith" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCQWaIUif_hP3ZkAVSS-gI0Eb8ZJdZJx_gJWeN1QGtfsCWrFyrZHdGsv3XyUJARBKoFo8HI5uf2V00rdu70E3_Wutfqwz2H--fte8xqTaUa1A5Y38_LrB6cF2BOskeg9L_UVovk8n7kQPeDUghdB-tUsqIN8azjQpS0mS6VIMB8UkxRBs1KcmBVucD6qEmEhfpdnoRvhEWKVVTnoNtqO2nu95GJIxEAnPC2VeKAo6IcJyvHdtFj7AHRJ3759WrF0qNdRVZisovDhy0")'></div>
+<p class="font-medium text-slate-800 dark:text-slate-200">James Smith</p>
+</div>
+<p class="col-span-4 text-right font-semibold text-slate-900 dark:text-white">10,110 XP</p>
+<div class="col-span-1 flex justify-end text-slate-500 dark:text-slate-400">-</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Panel -->
+<aside class="col-span-12 lg:col-span-3">
+<div class="sticky top-24 flex flex-col gap-6">
+<!-- Your Rank Card -->
+<div class="flex flex-col items-center gap-4 text-center bg-white dark:bg-background-dark p-6 rounded-lg border border-slate-200/80 dark:border-slate-800/80">
+<p class="text-sm font-bold uppercase text-slate-500 dark:text-slate-400">Your Weekly Rank</p>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24 border-4 border-primary" data-alt="Your avatar, Alex Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATjQBGQUKpKJcE1bDkJfe-OL41ReylQuwc4XACsGzPwORZVRgaB7r7NH7w5ra2Vxjmx_h0A-EuYcBKU0yPVTUVVOjYApDyhklrhIkB7Fx3rdv33WPv0XngZAyhdlfN9uHDMU77JgmQi_mHDjsSN29tcHgDi_s7SPHAUohaWQ-_4arHe86CIS0LhppEYf3r_0w7xkhvqmB9pczJ4rYB0Ub229V2x7QJquBXySyJCTxUoTbBAokhjLQ1eWBNQ01GquqWyJJbiGkbE4ZO");'></div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">#5</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400">You're in the <span class="font-bold text-primary">Top 10%</span> globally!</p>
+</div>
+<!-- Next Rank Up Card -->
+<div class="flex flex-col gap-4 bg-white dark:bg-background-dark p-6 rounded-lg border border-slate-200/80 dark:border-slate-800/80">
+<p class="text-sm font-bold uppercase text-slate-500 dark:text-slate-400">Next Rank Up</p>
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="User avatar for Noah Patel" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKGpym7OKt7K8-26GCvYXLrJHq1-PRJ4CRLYHy-UfYeCNE6BzXTvcMsCDyyeOxBMAgcjQGRR7zC5waurI_f9N1ABxLNEw5FKfwkIZNW4v6OTSSJltOtjHQwE_22XxRFscviz9THPgik-6mpn2-7ViKMrDY5JbiGWs-BAMtlzQJYJJ_w83wtBtm0273OvVil-OxL8Nj3RLug4gyRzak5DKk5-U0ymu-TZ1TjA2MtZX5gw-dHHpPOhYzt65_cs2kHA56ar_6ZgO_VZhi")'></div>
+<div class="flex-grow">
+<p class="font-medium text-slate-800 dark:text-slate-200">Noah Patel</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">#4</p>
+</div>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+</div>
+<p class="text-center text-sm text-slate-600 dark:text-slate-400">Just <span class="font-bold text-slate-800 dark:text-slate-200">480 XP</span> to the next level!</p>
+</div>
+<!-- Achievements -->
+<div class="flex flex-col gap-4 bg-white dark:bg-background-dark p-6 rounded-lg border border-slate-200/80 dark:border-slate-800/80">
+<p class="text-sm font-bold uppercase text-slate-500 dark:text-slate-400">Recent Achievements</p>
+<div class="flex justify-around items-center">
+<div class="flex flex-col items-center gap-2">
+<div class="text-4xl">🏆</div>
+<p class="text-xs text-center font-medium text-slate-600 dark:text-slate-400">Weekly Warrior</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="text-4xl">🔥</div>
+<p class="text-xs text-center font-medium text-slate-600 dark:text-slate-400">10-Day Streak</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="text-4xl">🏃</div>
+<p class="text-xs text-center font-medium text-slate-600 dark:text-slate-400">5k Finisher</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

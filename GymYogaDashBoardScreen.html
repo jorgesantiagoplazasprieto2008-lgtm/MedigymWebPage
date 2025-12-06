@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Yoga Training Dashboard</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Yoga Training Dashboard</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script>
     tailwind.config = {
       darkMode: "class",
       theme: {
@@ -29,7 +34,7 @@
       },
     }
   </script>
-<style>
+  <style>
     .material-symbols-outlined {
       font-variation-settings:
         'FILL' 0,
@@ -37,6 +42,7 @@
         'GRAD' 0,
         'opsz' 24
     }
+
     .material-symbols-outlined.fill {
       font-variation-settings:
         'FILL' 1,
@@ -44,6 +50,7 @@
         'GRAD' 0,
         'opsz' 24
     }
+
     .path-line {
       content: '';
       position: absolute;
@@ -55,218 +62,201 @@
       background-image: repeating-linear-gradient(to bottom, #e0d9ed, #e0d9ed 8px, transparent 8px, transparent 16px);
       z-index: 0;
     }
+
     .dark .path-line {
       background-image: repeating-linear-gradient(to bottom, #393346, #393346 8px, transparent 8px, transparent 16px);
     }
   </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
-<div class="relative flex min-h-screen w-full">
-<aside class="flex-col bg-white dark:bg-gray-900/50 border-r border-gray-200 dark:border-gray-800 p-4 w-64 hidden lg:flex">
-<div class="flex h-full min-h-[700px] flex-col justify-between">
-<div class="flex flex-col gap-6">
-<div class="flex items-center gap-3 px-3">
-<span class="material-symbols-outlined text-primary text-3xl">self_improvement</span>
-<h1 class="text-xl font-bold text-gray-900 dark:text-white">ZenFit</h1>
-</div>
-<div class="flex flex-col gap-4">
-<div class="flex gap-3 items-center">
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAw9aI6P4bXqksjNN5wfVjQjtZjxL6eE43wwwLswHGLWNRtvutsAfEIr7VWt7OQu1Pujb3mAGwUHP5WzHD6Cu1bBgNHrrm1tk4fHGDtXkvPW95oepd1puAZ_rRyoZdeAARWPhIawTikvHsak8KWrOr9oJDB4LrTHGELLCrlxMY-ANQuz-1vGw1ViGLIk2K9z2XGD9nixoB_lGSb2J51Hq46dBPoMeCgAJlTRfC40EbGKNEBE5vYfJ7Olu7lrhYcBaoCiDo4NsUWCB9s");'></div>
-<div class="flex flex-col">
-<h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Alex Doe</h1>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Level 12</p>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<a class="flex items-center gap-3 px-3 py-2 rounded-full bg-primary/20" href="#">
-<span class="material-symbols-outlined fill text-gray-900 dark:text-white">dashboard</span>
-<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Dashboard</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
-<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">person</span>
-<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Profile</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
-<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">leaderboard</span>
-<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Leaderboards</p>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
-<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">settings</span>
-<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Settings</p>
-</a>
-</div>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<a class="flex items-center gap-3 px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
-<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">logout</span>
-<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Log Out</p>
-</a>
-</div>
-</div>
-</aside>
-<main class="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
-<div class="grid grid-cols-12 gap-6 h-full">
-<div class="col-span-12 lg:col-span-3">
-<div class="sticky top-6 flex flex-col gap-6">
-<div class="grid grid-cols-2 gap-4">
-<div class="flex flex-col gap-2 rounded-lg p-4 bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800">
-<p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">Total XP</p>
-<p class="text-gray-900 dark:text-white tracking-light text-2xl font-bold leading-tight">1,450</p>
-</div>
-<div class="flex flex-col gap-2 rounded-lg p-4 bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800">
-<p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">Daily Streak</p>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-orange-500">local_fire_department</span>
-<p class="text-gray-900 dark:text-white tracking-light text-2xl font-bold leading-tight">21</p>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 rounded-lg p-4 flex flex-col gap-4">
-<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Daily Yoga Goals</h3>
-<div class="flex flex-col gap-4">
-<div class="flex flex-col gap-2">
-<div class="flex gap-6 justify-between items-center">
-<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Complete 1 Yoga Session</p>
-<p class="text-gray-500 dark:text-gray-400 text-xs font-normal leading-normal">1/1</p>
-</div>
-<div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-<div class="h-2 rounded-full bg-primary" style="width: 100%;"></div>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex gap-6 justify-between items-center">
-<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Earn 50 XP</p>
-<p class="text-gray-500 dark:text-gray-400 text-xs font-normal leading-normal">30/50</p>
-</div>
-<div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-<div class="h-2 rounded-full bg-primary" style="width: 60%;"></div>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex gap-6 justify-between items-center">
-<p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Hold 3 Poses</p>
-<p class="text-gray-500 dark:text-gray-400 text-xs font-normal leading-normal">1/3</p>
-</div>
-<div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2">
-<div class="h-2 rounded-full bg-primary" style="width: 33%;"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-span-12 lg:col-span-6">
-<div class="flex flex-col items-center gap-4 text-center">
-<h2 class="text-2xl font-bold text-gray-900 dark:text-white">Path to Inner Peace</h2>
-<p class="text-gray-600 dark:text-gray-400 max-w-md">Embrace the flow. Complete these sessions to find your balance and unlock the next level.</p>
-</div>
-<div class="relative mt-12 flex flex-col items-center">
-<div class="path-line"></div>
-<div class="relative z-10 flex flex-col items-center gap-2 mb-16 w-full">
-<button class="size-16 rounded-full bg-primary flex items-center justify-center border-4 border-white dark:border-background-dark ring-4 ring-primary/50">
-<span class="material-symbols-outlined text-white text-3xl">check</span>
-</button>
-<p class="font-semibold text-gray-800 dark:text-gray-200">Sun Salutation Basics</p>
-</div>
-<div class="relative z-10 flex flex-col items-center gap-4 mb-16 w-full max-w-xs text-center">
-<button class="size-20 rounded-full bg-primary flex items-center justify-center border-4 border-white dark:border-background-dark ring-8 ring-primary/30 animate-pulse">
-<span class="material-symbols-outlined text-white text-4xl">play_arrow</span>
-</button>
-<div class="flex flex-col gap-2">
-<p class="text-lg font-bold text-gray-900 dark:text-white">Morning Flow</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">20 min • 30 XP</p>
-<button class="mt-2 w-full px-6 py-3 bg-primary text-white font-bold rounded-full text-base hover:bg-opacity-90 transition-all">Start Session</button>
-</div>
-</div>
-<div class="relative z-10 flex flex-col items-center gap-2 mb-16 w-full opacity-50">
-<button class="size-16 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center border-4 border-white dark:border-background-dark">
-<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-3xl">lock</span>
-</button>
-<p class="font-semibold text-gray-500 dark:text-gray-400">Warrior Pose Focus</p>
-</div>
-<div class="relative z-10 flex flex-col items-center gap-4 mb-16 w-full">
-<div class="size-24 rounded-full bg-amber-400 flex items-center justify-center border-4 border-white dark:border-background-dark ring-4 ring-amber-400/50">
-<span class="material-symbols-outlined text-white text-5xl">spa</span>
-</div>
-<div class="text-center">
-<p class="text-lg font-bold text-amber-500 dark:text-amber-400">Mindfulness Unlocked</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">Unlock a Reward</p>
-</div>
-</div>
-<div class="relative z-10 flex flex-col items-center gap-2 w-full opacity-50">
-<button class="size-16 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center border-4 border-white dark:border-background-dark">
-<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-3xl">lock</span>
-</button>
-<p class="font-semibold text-gray-500 dark:text-gray-400">Evening Wind-Down</p>
-</div>
-</div>
-</div>
-<div class="col-span-12 lg:col-span-3">
-<div class="sticky top-6 flex flex-col gap-6">
-<div class="bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 rounded-lg p-4 flex flex-col gap-4">
-<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Upcoming Sessions</h3>
-<ul class="space-y-4">
-<li class="flex items-start gap-4">
-<div class="flex flex-col items-center justify-center bg-primary/10 rounded-lg p-2 w-14">
-<span class="text-primary font-bold text-lg">24</span>
-<span class="text-primary/80 text-xs uppercase">JUL</span>
-</div>
-<div class="flex-1">
-<p class="font-semibold text-gray-800 dark:text-gray-200">Vinyasa Flow</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">with Maria S.</p>
-<p class="text-xs text-gray-400 dark:text-gray-500 mt-1">10:00 AM - 11:00 AM</p>
-</div>
-</li>
-<li class="flex items-start gap-4">
-<div class="flex flex-col items-center justify-center bg-primary/10 rounded-lg p-2 w-14">
-<span class="text-primary font-bold text-lg">26</span>
-<span class="text-primary/80 text-xs uppercase">JUL</span>
-</div>
-<div class="flex-1">
-<p class="font-semibold text-gray-800 dark:text-gray-200">Restorative Yoga</p>
-<p class="text-sm text-gray-500 dark:text-gray-400">with Ken J.</p>
-<p class="text-xs text-gray-400 dark:text-gray-500 mt-1">6:00 PM - 7:00 PM</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 rounded-lg p-4 flex flex-col gap-4">
-<h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Poses Progress</h3>
-<ul class="space-y-3">
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-2xl">more_down</span>
-<div class="flex-1">
-<p class="text-sm font-medium text-gray-800 dark:text-gray-200">Downward Dog</p>
-<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1">
-<div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
-</div>
-</div>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-2xl">airline_seat_recline_normal</span>
-<div class="flex-1">
-<p class="text-sm font-medium text-gray-800 dark:text-gray-200">Warrior II</p>
-<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1">
-<div class="bg-primary h-1.5 rounded-full" style="width: 60%"></div>
-</div>
-</div>
-</li>
-<li class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary text-2xl">nature</span>
-<div class="flex-1">
-<p class="text-sm font-medium text-gray-800 dark:text-gray-200">Tree Pose</p>
-<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1">
-<div class="bg-primary h-1.5 rounded-full" style="width: 40%"></div>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
 
-</body></html>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+  <div class="relative flex min-h-screen w-full">
+    <!-- Sidebar dinámico -->
+    <div id="sidebar"></div>
+
+    <!-- Carga del archivo sidebar.html -->
+    <script src="sidebar.js"></script>
+    <main class="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto">
+      <div class="grid grid-cols-12 gap-6 h-full">
+        <div class="col-span-12 lg:col-span-3">
+          <div class="sticky top-6 flex flex-col gap-6">
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="flex flex-col gap-2 rounded-lg p-4 bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800">
+                <p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">Total XP</p>
+                <p class="text-gray-900 dark:text-white tracking-light text-2xl font-bold leading-tight">1,450</p>
+              </div>
+              <div
+                class="flex flex-col gap-2 rounded-lg p-4 bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800">
+                <p class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">Daily Streak</p>
+                <div class="flex items-center gap-1">
+                  <span class="material-symbols-outlined text-orange-500">local_fire_department</span>
+                  <p class="text-gray-900 dark:text-white tracking-light text-2xl font-bold leading-tight">21</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 rounded-lg p-4 flex flex-col gap-4">
+              <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Daily Yoga
+                Goals</h3>
+              <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-2">
+                  <div class="flex gap-6 justify-between items-center">
+                    <p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Complete 1 Yoga
+                      Session</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs font-normal leading-normal">1/1</p>
+                  </div>
+                  <div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2">
+                    <div class="h-2 rounded-full bg-primary" style="width: 100%;"></div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex gap-6 justify-between items-center">
+                    <p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Earn 50 XP</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs font-normal leading-normal">30/50</p>
+                  </div>
+                  <div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2">
+                    <div class="h-2 rounded-full bg-primary" style="width: 60%;"></div>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex gap-6 justify-between items-center">
+                    <p class="text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal">Hold 3 Poses</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-xs font-normal leading-normal">1/3</p>
+                  </div>
+                  <div class="rounded-full bg-gray-200 dark:bg-gray-700 h-2">
+                    <div class="h-2 rounded-full bg-primary" style="width: 33%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-6">
+          <div class="flex flex-col items-center gap-4 text-center">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Path to Inner Peace</h2>
+            <p class="text-gray-600 dark:text-gray-400 max-w-md">Embrace the flow. Complete these sessions to find your
+              balance and unlock the next level.</p>
+          </div>
+          <div class="relative mt-12 flex flex-col items-center">
+            <div class="path-line"></div>
+            <div class="relative z-10 flex flex-col items-center gap-2 mb-16 w-full">
+              <button
+                class="size-16 rounded-full bg-primary flex items-center justify-center border-4 border-white dark:border-background-dark ring-4 ring-primary/50">
+                <span class="material-symbols-outlined text-white text-3xl">check</span>
+              </button>
+              <p class="font-semibold text-gray-800 dark:text-gray-200">Sun Salutation Basics</p>
+            </div>
+            <div class="relative z-10 flex flex-col items-center gap-4 mb-16 w-full max-w-xs text-center">
+              <button
+                class="size-20 rounded-full bg-primary flex items-center justify-center border-4 border-white dark:border-background-dark ring-8 ring-primary/30 animate-pulse">
+                <span class="material-symbols-outlined text-white text-4xl">play_arrow</span>
+              </button>
+              <div class="flex flex-col gap-2">
+                <p class="text-lg font-bold text-gray-900 dark:text-white">Morning Flow</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">20 min • 30 XP</p>
+                <button
+                  class="mt-2 w-full px-6 py-3 bg-primary text-white font-bold rounded-full text-base hover:bg-opacity-90 transition-all">Start
+                  Session</button>
+              </div>
+            </div>
+            <div class="relative z-10 flex flex-col items-center gap-2 mb-16 w-full opacity-50">
+              <button
+                class="size-16 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center border-4 border-white dark:border-background-dark">
+                <span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-3xl">lock</span>
+              </button>
+              <p class="font-semibold text-gray-500 dark:text-gray-400">Warrior Pose Focus</p>
+            </div>
+            <div class="relative z-10 flex flex-col items-center gap-4 mb-16 w-full">
+              <div
+                class="size-24 rounded-full bg-amber-400 flex items-center justify-center border-4 border-white dark:border-background-dark ring-4 ring-amber-400/50">
+                <span class="material-symbols-outlined text-white text-5xl">spa</span>
+              </div>
+              <div class="text-center">
+                <p class="text-lg font-bold text-amber-500 dark:text-amber-400">Mindfulness Unlocked</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Unlock a Reward</p>
+              </div>
+            </div>
+            <div class="relative z-10 flex flex-col items-center gap-2 w-full opacity-50">
+              <button
+                class="size-16 rounded-full bg-gray-300 dark:bg-gray-700 flex items-center justify-center border-4 border-white dark:border-background-dark">
+                <span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-3xl">lock</span>
+              </button>
+              <p class="font-semibold text-gray-500 dark:text-gray-400">Evening Wind-Down</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-3">
+          <div class="sticky top-6 flex flex-col gap-6">
+            <div
+              class="bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 rounded-lg p-4 flex flex-col gap-4">
+              <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Upcoming
+                Sessions</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-4">
+                  <div class="flex flex-col items-center justify-center bg-primary/10 rounded-lg p-2 w-14">
+                    <span class="text-primary font-bold text-lg">24</span>
+                    <span class="text-primary/80 text-xs uppercase">JUL</span>
+                  </div>
+                  <div class="flex-1">
+                    <p class="font-semibold text-gray-800 dark:text-gray-200">Vinyasa Flow</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">with Maria S.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">10:00 AM - 11:00 AM</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="flex flex-col items-center justify-center bg-primary/10 rounded-lg p-2 w-14">
+                    <span class="text-primary font-bold text-lg">26</span>
+                    <span class="text-primary/80 text-xs uppercase">JUL</span>
+                  </div>
+                  <div class="flex-1">
+                    <p class="font-semibold text-gray-800 dark:text-gray-200">Restorative Yoga</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">with Ken J.</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">6:00 PM - 7:00 PM</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-800 rounded-lg p-4 flex flex-col gap-4">
+              <h3 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Poses
+                Progress</h3>
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary text-2xl">more_down</span>
+                  <div class="flex-1">
+                    <p class="text-sm font-medium text-gray-800 dark:text-gray-200">Downward Dog</p>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1">
+                      <div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary text-2xl">airline_seat_recline_normal</span>
+                  <div class="flex-1">
+                    <p class="text-sm font-medium text-gray-800 dark:text-gray-200">Warrior II</p>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1">
+                      <div class="bg-primary h-1.5 rounded-full" style="width: 60%"></div>
+                    </div>
+                  </div>
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary text-2xl">nature</span>
+                  <div class="flex-1">
+                    <p class="text-sm font-medium text-gray-800 dark:text-gray-200">Tree Pose</p>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-1">
+                      <div class="bg-primary h-1.5 rounded-full" style="width: 40%"></div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+
+</html>

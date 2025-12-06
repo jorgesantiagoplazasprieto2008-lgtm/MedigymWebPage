@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>FitQuest - Your Progress</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>FitQuest - Your Progress</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -32,213 +36,327 @@
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
         }
     </style>
 </head>
+
 <body class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<div class="flex flex-1 justify-center py-5 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
-<div class="layout-content-container flex flex-col w-full max-w-7xl flex-1">
-<!-- TopNavBar -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-700 px-6 sm:px-10 py-3">
-<div class="flex items-center gap-4 text-gray-900 dark:text-white">
-<div class="size-6 text-primary">
-<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.59L6.41 12 5 13.41 11 19.41l8-8L17.59 10 11 16.59z"></path>
-</svg>
-</div>
-<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">FitQuest</h2>
-</div>
-<div class="hidden md:flex flex-1 justify-center gap-9">
-<a class="text-sm font-medium leading-normal text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" href="#">Home</a>
-<a class="text-sm font-medium leading-normal text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" href="#">Start Workout</a>
-<a class="text-sm font-medium leading-normal text-gray-900 dark:text-white" href="#">Progress</a>
-</div>
-<div class="flex flex-1 justify-end items-center gap-4">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-200/50 dark:bg-gray-800/50 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800">
-<span class="material-symbols-outlined text-xl">notifications</span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDy8xcVJnX1QkGEzsI_Ym-Fx1Kbv02F6S0rB6YjGM4syqgAyL20jnOGS27HVI2QwEOdBPATN_d6QtXMnaz1LpiBn3vX3UJM6q77MMXeAxyGNtNLV7RGrrubJtJUjQ_JXOImbs8hUXfuvY7MgbSqovCzWdFtHvXtYKBy_StFSJSCCYB_Hm0-3FcKJEKnVXFj9_iknhFcempvdskjkJDoeK8ythQlhvihXDoR1CsO27WgyW8PH1MGt1-K1UTW-W4pwCA4ovHyDjObu_cS");'></div>
-</div>
-</header>
-<main class="flex flex-col gap-8 py-8 px-2 sm:px-4">
-<!-- PageHeading -->
-<div class="flex flex-wrap justify-between items-center gap-4 px-4">
-<div class="flex flex-col gap-2">
-<p class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-900 dark:text-white">Your Progress</p>
-<p class="text-base font-normal leading-normal text-gray-500 dark:text-gray-400">Check out your workout history, stats, and achievements.</p>
-</div>
-<!-- SegmentedButtons -->
-<div class="flex w-full md:w-auto">
-<div class="flex h-10 flex-1 items-center justify-center rounded-full bg-gray-200/60 dark:bg-gray-800/60 p-1">
-<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-4 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-900 has-[:checked]:shadow-sm has-[:checked]:text-gray-900 dark:has-[:checked]:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
-<span class="truncate">Last 7 Days</span>
-<input class="invisible w-0" name="time-filter" type="radio" value="Last 7 Days"/>
-</label>
-<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-4 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-900 has-[:checked]:shadow-sm has-[:checked]:text-gray-900 dark:has-[:checked]:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
-<span class="truncate">This Month</span>
-<input checked="" class="invisible w-0" name="time-filter" type="radio" value="This Month"/>
-</label>
-<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-4 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-900 has-[:checked]:shadow-sm has-[:checked]:text-gray-900 dark:has-[:checked]:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
-<span class="truncate">All Time</span>
-<input class="invisible w-0" name="time-filter" type="radio" value="All Time"/>
-</label>
-</div>
-</div>
-</div>
-<!-- Stats -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
-<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
-<p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Total Workouts</p>
-<p class="tracking-light text-3xl font-bold leading-tight text-gray-900 dark:text-white">128</p>
-<p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+12%</p>
-</div>
-<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
-<p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Time Exercising</p>
-<p class="tracking-light text-3xl font-bold leading-tight text-gray-900 dark:text-white">96 hours</p>
-<p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+8%</p>
-</div>
-<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
-<p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Current Streak</p>
-<p class="tracking-light text-3xl font-bold leading-tight text-gray-900 dark:text-white">21 days</p>
-<p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+2 days</p>
-</div>
-<div class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
-<p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Personal Best</p>
-<p class="tracking-light text-3xl font-bold leading-tight text-gray-900 dark:text-white">150kg Deadlift</p>
-<p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+5kg</p>
-</div>
-</div>
-<!-- Charts -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 px-4 py-6">
-<div class="flex flex-col gap-2 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-white dark:bg-gray-900/50">
-<p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Weekly XP Gained</p>
-<p class="tracking-light text-[32px] font-bold leading-tight truncate text-gray-900 dark:text-white">3,450 XP</p>
-<div class="flex gap-1">
-<p class="text-base font-normal leading-normal text-gray-500 dark:text-gray-400">This Month</p>
-<p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+15.2%</p>
-</div>
-<div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
-<svg fill="none" height="148" preserveaspectratio="none" viewbox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear_chart)"></path>
-<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#13ec49" stroke-linecap="round" stroke-width="3"></path>
-<defs>
-<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_chart" x1="236" x2="236" y1="1" y2="149">
-<stop stop-color="#13ec49" stop-opacity="0.2"></stop>
-<stop offset="1" stop-color="#13ec49" stop-opacity="0"></stop>
-</lineargradient>
-</defs>
-</svg>
-<div class="flex justify-around text-gray-500 dark:text-gray-400">
-<p class="text-[13px] font-bold leading-normal tracking-[0.015em]">Week 1</p>
-<p class="text-[13px] font-bold leading-normal tracking-[0.015em]">Week 2</p>
-<p class="text-[13px] font-bold leading-normal tracking-[0.015em]">Week 3</p>
-<p class="text-[13px] font-bold leading-normal tracking-[0.015em]">Week 4</p>
-</div>
-</div>
-</div>
-<div class="flex flex-col gap-2 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-white dark:bg-gray-900/50">
-<p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Workout Duration Trends</p>
-<p class="tracking-light text-[32px] font-bold leading-tight truncate text-gray-900 dark:text-white">45 min avg</p>
-<div class="flex gap-1">
-<p class="text-base font-normal leading-normal text-gray-500 dark:text-gray-400">This Month</p>
-<p class="text-base font-medium leading-normal text-red-500">-2.5%</p>
-</div>
-<div class="grid min-h-[220px] grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3 py-4">
-<div class="bg-primary/20 w-full rounded-t" style="height: 70%;"></div><p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Mon</p>
-<div class="bg-primary/20 w-full rounded-t" style="height: 40%;"></div><p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Tue</p>
-<div class="bg-primary/20 w-full rounded-t" style="height: 90%;"></div><p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Wed</p>
-<div class="bg-primary/20 w-full rounded-t" style="height: 20%;"></div><p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Thu</p>
-<div class="bg-primary/20 w-full rounded-t" style="height: 80%;"></div><p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Fri</p>
-<div class="bg-primary/20 w-full rounded-t" style="height: 10%;"></div><p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Sat</p>
-<div class="bg-primary/20 w-full rounded-t" style="height: 20%;"></div><p class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">Sun</p>
-</div>
-</div>
-</div>
-<!-- Achievements Grid -->
-<div class="flex flex-col gap-4 p-4">
-<h3 class="text-2xl font-bold text-gray-900 dark:text-white px-2">Achievements</h3>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-<div class="flex flex-col items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-center">
-<div class="w-20 h-20 rounded-full flex items-center justify-center bg-amber-400/20"><span class="material-symbols-outlined text-4xl text-amber-500">local_fire_department</span></div>
-<p class="font-bold text-gray-900 dark:text-white">Streak Starter</p>
-<p class="text-xs text-gray-500 dark:text-gray-400">Complete a 3-day workout streak.</p>
-</div>
-<div class="flex flex-col items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-center">
-<div class="w-20 h-20 rounded-full flex items-center justify-center bg-cyan-400/20"><span class="material-symbols-outlined text-4xl text-cyan-500">directions_run</span></div>
-<p class="font-bold text-gray-900 dark:text-white">Marathoner</p>
-<p class="text-xs text-gray-500 dark:text-gray-400">Run a total of 42km.</p>
-</div>
-<div class="flex flex-col items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-center">
-<div class="w-20 h-20 rounded-full flex items-center justify-center bg-lime-400/20"><span class="material-symbols-outlined text-4xl text-lime-500">calendar_month</span></div>
-<p class="font-bold text-gray-900 dark:text-white">Consistency King</p>
-<p class="text-xs text-gray-500 dark:text-gray-400">Workout 20 times in a month.</p>
-</div>
-<div class="flex flex-col items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-center opacity-40">
-<div class="w-20 h-20 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-800"><span class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-500">fitness_center</span></div>
-<p class="font-bold text-gray-900 dark:text-white">Century Club</p>
-<p class="text-xs text-gray-500 dark:text-gray-400">Complete 100 workouts.</p>
-</div>
-<div class="flex flex-col items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-center opacity-40">
-<div class="w-20 h-20 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-800"><span class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-500">rocket_launch</span></div>
-<p class="font-bold text-gray-900 dark:text-white">New Heights</p>
-<p class="text-xs text-gray-500 dark:text-gray-400">Set 5 new personal records.</p>
-</div>
-</div>
-</div>
-<!-- Workout History Log -->
-<div class="flex flex-col gap-4 p-4">
-<h3 class="text-2xl font-bold text-gray-900 dark:text-white px-2">Workout History</h3>
-<div class="overflow-x-auto rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
-<table class="w-full text-left">
-<thead class="text-xs text-gray-500 dark:text-gray-400 uppercase bg-gray-50 dark:bg-gray-900">
-<tr>
-<th class="px-6 py-3" scope="col">Workout</th>
-<th class="px-6 py-3" scope="col">Date</th>
-<th class="px-6 py-3" scope="col">Duration</th>
-<th class="px-6 py-3 text-right" scope="col">XP Gained</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer">
-<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Leg Day - Level 5</td>
-<td class="px-6 py-4">Oct 26, 2023</td>
-<td class="px-6 py-4">55 min</td>
-<td class="px-6 py-4 font-bold text-primary text-right">+250 XP</td>
-</tr>
-<tr class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer">
-<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">HIIT Cardio</td>
-<td class="px-6 py-4">Oct 25, 2023</td>
-<td class="px-6 py-4">25 min</td>
-<td class="px-6 py-4 font-bold text-primary text-right">+150 XP</td>
-</tr>
-<tr class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer">
-<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Push Day - Strength</td>
-<td class="px-6 py-4">Oct 24, 2023</td>
-<td class="px-6 py-4">60 min</td>
-<td class="px-6 py-4 font-bold text-primary text-right">+280 XP</td>
-</tr>
-<tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer">
-<td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Yoga &amp; Mobility</td>
-<td class="px-6 py-4">Oct 22, 2023</td>
-<td class="px-6 py-4">30 min</td>
-<td class="px-6 py-4 font-bold text-primary text-right">+120 XP</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</main>
-</div>
-</div>
-</div>
-</div>
-</body></html>
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <div class="flex flex-1 justify-center py-5 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
+                <div class="layout-content-container flex flex-col w-full max-w-7xl flex-1">
+                    <!-- TopNavBar -->
+                    <header
+                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-700 px-6 sm:px-10 py-3">
+                        <div class="flex items-center gap-4 text-gray-900 dark:text-white">
+                            <div class="size-6 text-primary">
+                                <svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.59L6.41 12 5 13.41 11 19.41l8-8L17.59 10 11 16.59z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">FitQuest</h2>
+                        </div>
+                        <div class="hidden md:flex flex-1 justify-center gap-9">
+                            <a class="text-sm font-medium leading-normal text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                                href="#">Home</a>
+                            <a class="text-sm font-medium leading-normal text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                                href="#">Start Workout</a>
+                            <a class="text-sm font-medium leading-normal text-gray-900 dark:text-white"
+                                href="#">Progress</a>
+                        </div>
+                        <div class="flex flex-1 justify-end items-center gap-4">
+                            <button
+                                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-200/50 dark:bg-gray-800/50 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800">
+                                <span class="material-symbols-outlined text-xl">notifications</span>
+                            </button>
+                            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                                data-alt="User profile avatar"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDy8xcVJnX1QkGEzsI_Ym-Fx1Kbv02F6S0rB6YjGM4syqgAyL20jnOGS27HVI2QwEOdBPATN_d6QtXMnaz1LpiBn3vX3UJM6q77MMXeAxyGNtNLV7RGrrubJtJUjQ_JXOImbs8hUXfuvY7MgbSqovCzWdFtHvXtYKBy_StFSJSCCYB_Hm0-3FcKJEKnVXFj9_iknhFcempvdskjkJDoeK8ythQlhvihXDoR1CsO27WgyW8PH1MGt1-K1UTW-W4pwCA4ovHyDjObu_cS");'>
+                            </div>
+                        </div>
+                    </header>
+                    <main class="flex flex-col gap-8 py-8 px-2 sm:px-4">
+                        <!-- PageHeading -->
+                        <div class="flex flex-wrap justify-between items-center gap-4 px-4">
+                            <div class="flex flex-col gap-2">
+                                <p
+                                    class="text-4xl font-black leading-tight tracking-[-0.033em] text-gray-900 dark:text-white">
+                                    Your Progress</p>
+                                <p class="text-base font-normal leading-normal text-gray-500 dark:text-gray-400">Check
+                                    out your workout history, stats, and achievements.</p>
+                            </div>
+                            <!-- SegmentedButtons -->
+                            <div class="flex w-full md:w-auto">
+                                <div
+                                    class="flex h-10 flex-1 items-center justify-center rounded-full bg-gray-200/60 dark:bg-gray-800/60 p-1">
+                                    <label
+                                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-4 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-900 has-[:checked]:shadow-sm has-[:checked]:text-gray-900 dark:has-[:checked]:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
+                                        <span class="truncate">Last 7 Days</span>
+                                        <input class="invisible w-0" name="time-filter" type="radio"
+                                            value="Last 7 Days" />
+                                    </label>
+                                    <label
+                                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-4 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-900 has-[:checked]:shadow-sm has-[:checked]:text-gray-900 dark:has-[:checked]:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
+                                        <span class="truncate">This Month</span>
+                                        <input checked="" class="invisible w-0" name="time-filter" type="radio"
+                                            value="This Month" />
+                                    </label>
+                                    <label
+                                        class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-4 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-900 has-[:checked]:shadow-sm has-[:checked]:text-gray-900 dark:has-[:checked]:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">
+                                        <span class="truncate">All Time</span>
+                                        <input class="invisible w-0" name="time-filter" type="radio" value="All Time" />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Stats -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+                            <div
+                                class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
+                                <p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Total
+                                    Workouts</p>
+                                <p
+                                    class="tracking-light text-3xl font-bold leading-tight text-gray-900 dark:text-white">
+                                    128</p>
+                                <p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+12%
+                                </p>
+                            </div>
+                            <div
+                                class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
+                                <p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Time
+                                    Exercising</p>
+                                <p
+                                    class="tracking-light text-3xl font-bold leading-tight text-gray-900 dark:text-white">
+                                    96 hours</p>
+                                <p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+8%
+                                </p>
+                            </div>
+                            <div
+                                class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
+                                <p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Current
+                                    Streak</p>
+                                <p
+                                    class="tracking-light text-3xl font-bold leading-tight text-gray-900 dark:text-white">
+                                    21 days</p>
+                                <p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+2
+                                    days</p>
+                            </div>
+                            <div
+                                class="flex flex-col gap-2 rounded-lg p-6 bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
+                                <p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">
+                                    Personal Best</p>
+                                <p
+                                    class="tracking-light text-3xl font-bold leading-tight text-gray-900 dark:text-white">
+                                    150kg Deadlift</p>
+                                <p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">+5kg
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Charts -->
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 px-4 py-6">
+                            <div
+                                class="flex flex-col gap-2 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-white dark:bg-gray-900/50">
+                                <p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Weekly
+                                    XP Gained</p>
+                                <p
+                                    class="tracking-light text-[32px] font-bold leading-tight truncate text-gray-900 dark:text-white">
+                                    3,450 XP</p>
+                                <div class="flex gap-1">
+                                    <p class="text-base font-normal leading-normal text-gray-500 dark:text-gray-400">
+                                        This Month</p>
+                                    <p class="text-base font-medium leading-normal text-green-600 dark:text-green-500">
+                                        +15.2%</p>
+                                </div>
+                                <div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+                                    <svg fill="none" height="148" preserveaspectratio="none" viewbox="-3 0 478 150"
+                                        width="100%" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z"
+                                            fill="url(#paint0_linear_chart)"></path>
+                                        <path
+                                            d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25"
+                                            stroke="#13ec49" stroke-linecap="round" stroke-width="3"></path>
+                                        <defs>
+                                            <lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_chart"
+                                                x1="236" x2="236" y1="1" y2="149">
+                                                <stop stop-color="#13ec49" stop-opacity="0.2"></stop>
+                                                <stop offset="1" stop-color="#13ec49" stop-opacity="0"></stop>
+                                            </lineargradient>
+                                        </defs>
+                                    </svg>
+                                    <div class="flex justify-around text-gray-500 dark:text-gray-400">
+                                        <p class="text-[13px] font-bold leading-normal tracking-[0.015em]">Week 1</p>
+                                        <p class="text-[13px] font-bold leading-normal tracking-[0.015em]">Week 2</p>
+                                        <p class="text-[13px] font-bold leading-normal tracking-[0.015em]">Week 3</p>
+                                        <p class="text-[13px] font-bold leading-normal tracking-[0.015em]">Week 4</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col gap-2 rounded-lg border border-gray-200 dark:border-gray-800 p-6 bg-white dark:bg-gray-900/50">
+                                <p class="text-base font-medium leading-normal text-gray-600 dark:text-gray-400">Workout
+                                    Duration Trends</p>
+                                <p
+                                    class="tracking-light text-[32px] font-bold leading-tight truncate text-gray-900 dark:text-white">
+                                    45 min avg</p>
+                                <div class="flex gap-1">
+                                    <p class="text-base font-normal leading-normal text-gray-500 dark:text-gray-400">
+                                        This Month</p>
+                                    <p class="text-base font-medium leading-normal text-red-500">-2.5%</p>
+                                </div>
+                                <div
+                                    class="grid min-h-[220px] grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3 py-4">
+                                    <div class="bg-primary/20 w-full rounded-t" style="height: 70%;"></div>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Mon</p>
+                                    <div class="bg-primary/20 w-full rounded-t" style="height: 40%;"></div>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Tue</p>
+                                    <div class="bg-primary/20 w-full rounded-t" style="height: 90%;"></div>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Wed</p>
+                                    <div class="bg-primary/20 w-full rounded-t" style="height: 20%;"></div>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Thu</p>
+                                    <div class="bg-primary/20 w-full rounded-t" style="height: 80%;"></div>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Fri</p>
+                                    <div class="bg-primary/20 w-full rounded-t" style="height: 10%;"></div>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Sat</p>
+                                    <div class="bg-primary/20 w-full rounded-t" style="height: 20%;"></div>
+                                    <p
+                                        class="text-gray-500 dark:text-gray-400 text-[13px] font-bold leading-normal tracking-[0.015em]">
+                                        Sun</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Achievements Grid -->
+                        <div class="flex flex-col gap-4 p-4">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white px-2">Achievements</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                                <div
+                                    class="flex flex-col items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-center">
+                                    <div
+                                        class="w-20 h-20 rounded-full flex items-center justify-center bg-amber-400/20">
+                                        <span
+                                            class="material-symbols-outlined text-4xl text-amber-500">local_fire_department</span>
+                                    </div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Streak Starter</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Complete a 3-day workout streak.
+                                    </p>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-center">
+                                    <div class="w-20 h-20 rounded-full flex items-center justify-center bg-cyan-400/20">
+                                        <span
+                                            class="material-symbols-outlined text-4xl text-cyan-500">directions_run</span>
+                                    </div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Marathoner</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Run a total of 42km.</p>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-center">
+                                    <div class="w-20 h-20 rounded-full flex items-center justify-center bg-lime-400/20">
+                                        <span
+                                            class="material-symbols-outlined text-4xl text-lime-500">calendar_month</span>
+                                    </div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Consistency King</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Workout 20 times in a month.</p>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-center opacity-40">
+                                    <div
+                                        class="w-20 h-20 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-800">
+                                        <span
+                                            class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-500">fitness_center</span>
+                                    </div>
+                                    <p class="font-bold text-gray-900 dark:text-white">Century Club</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Complete 100 workouts.</p>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center gap-3 p-4 rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 text-center opacity-40">
+                                    <div
+                                        class="w-20 h-20 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-800">
+                                        <span
+                                            class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-500">rocket_launch</span>
+                                    </div>
+                                    <p class="font-bold text-gray-900 dark:text-white">New Heights</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">Set 5 new personal records.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Workout History Log -->
+                        <div class="flex flex-col gap-4 p-4">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white px-2">Workout History</h3>
+                            <div
+                                class="overflow-x-auto rounded-lg bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800">
+                                <table class="w-full text-left">
+                                    <thead
+                                        class="text-xs text-gray-500 dark:text-gray-400 uppercase bg-gray-50 dark:bg-gray-900">
+                                        <tr>
+                                            <th class="px-6 py-3" scope="col">Workout</th>
+                                            <th class="px-6 py-3" scope="col">Date</th>
+                                            <th class="px-6 py-3" scope="col">Duration</th>
+                                            <th class="px-6 py-3 text-right" scope="col">XP Gained</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr
+                                            class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer">
+                                            <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Leg Day -
+                                                Level 5</td>
+                                            <td class="px-6 py-4">Oct 26, 2023</td>
+                                            <td class="px-6 py-4">55 min</td>
+                                            <td class="px-6 py-4 font-bold text-primary text-right">+250 XP</td>
+                                        </tr>
+                                        <tr
+                                            class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer">
+                                            <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">HIIT Cardio
+                                            </td>
+                                            <td class="px-6 py-4">Oct 25, 2023</td>
+                                            <td class="px-6 py-4">25 min</td>
+                                            <td class="px-6 py-4 font-bold text-primary text-right">+150 XP</td>
+                                        </tr>
+                                        <tr
+                                            class="border-b border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer">
+                                            <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Push Day -
+                                                Strength</td>
+                                            <td class="px-6 py-4">Oct 24, 2023</td>
+                                            <td class="px-6 py-4">60 min</td>
+                                            <td class="px-6 py-4 font-bold text-primary text-right">+280 XP</td>
+                                        </tr>
+                                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 cursor-pointer">
+                                            <td class="px-6 py-4 font-medium text-gray-900 dark:text-white">Yoga &amp;
+                                                Mobility</td>
+                                            <td class="px-6 py-4">Oct 22, 2023</td>
+                                            <td class="px-6 py-4">30 min</td>
+                                            <td class="px-6 py-4 font-bold text-primary text-right">+120 XP</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

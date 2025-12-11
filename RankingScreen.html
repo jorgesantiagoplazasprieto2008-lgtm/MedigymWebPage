@@ -86,53 +86,11 @@
       <div class="grid grid-cols-12 gap-6">
         <!-- Left Sidebar -->
         <!-- Sidebar -->
-        <aside
-          class="fixed left-0 top-0 h-full w-64 bg-background-dark text-white p-6 flex flex-col gap-8 shadow-lg z-50">
+    <!-- Sidebar dinámico -->
+    <div id="sidebar.html"></div>
 
-          <!-- Logo -->
-          <div class="flex items-center gap-3 mb-6">
-            <span class="material-symbols-outlined text-primary text-4xl">fitness_center</span>
-            <h2 class="text-2xl font-bold">MediGym</h2>
-          </div>
-
-          <!-- Perfil usuario -->
-          <div class="flex items-center gap-3 bg-slate-800/40 p-3 rounded-xl">
-            <div class="bg-center bg-cover bg-no-repeat rounded-full size-12"
-              style='background-image: url("https://lh3.googleusercontent.com/a-/userprofile");'>
-            </div>
-            <div>
-              <p class="font-semibold">Usuario</p>
-              <p class="text-sm text-slate-400">Ver Perfil</p>
-            </div>
-          </div>
-
-          <!-- Navigation -->
-          <nav class="flex flex-col gap-4 text-base font-medium">
-
-            <a href="Dashboard.html" class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-700 transition">
-              <span class="material-symbols-outlined text-xl">home</span>
-              Dashboard
-            </a>
-
-            <a href="Profile.html" class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-700 transition">
-              <span class="material-symbols-outlined text-xl">person</span>
-              Profile
-            </a>
-
-            <a href="Leaderboard.html"
-              class="flex items-center gap-3 p-2 rounded-lg bg-primary/20 text-primary font-semibold rounded-lg transition">
-              <span class="material-symbols-outlined text-xl">emoji_events</span>
-              Ranking
-            </a>
-
-            <a href="Settings.html" class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-700 transition">
-              <span class="material-symbols-outlined text-xl">settings</span>
-              Settings
-            </a>
-
-          </nav>
-        </aside>
-
+    <!-- Carga del archivo sidebar.html -->
+    <script src="sidebar.js"></script>
         <!-- Main Content -->
         <section class="col-span-12 lg:col-span-6">
           <div class="flex flex-col gap-6">

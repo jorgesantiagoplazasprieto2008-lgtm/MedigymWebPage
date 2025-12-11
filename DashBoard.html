@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Training Progress Overview</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec49",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102215",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #dbe6de;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #13ec49;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white transition-colors duration-200">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <!-- Sidebar dinámico -->
+            <div id="sidebar.html"></div>
+
+            <!-- Carga del archivo sidebar.html -->
+            <script src="sidebar.js"></script>
+            <!-- Navigation -->
+            <div
+                class="w-full flex justify-center bg-white dark:bg-[#1a2e1f] border-b border-[#f0f4f1] dark:border-[#2a3e2f]">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+                    <header class="flex items-center justify-between whitespace-nowrap px-4 md:px-10 py-3">
+                        <div class="flex items-center gap-4 text-[#111813] dark:text-white">
+                            <div class="size-8 text-primary">
+                                <span class="material-symbols-outlined text-[32px]">fitness_center</span>
+                            </div>
+                            <h2
+                                class="text-[#111813] dark:text-white text-xl font-black leading-tight tracking-[-0.015em]">
+                                FitGame</h2>
+                        </div>
+                        <div class="hidden md:flex flex-1 justify-end gap-8">
+                            <div class="flex items-center gap-9">
+                            </div>
+                            <div class="flex gap-2">
+                                <button
+                                    class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#f0f4f1] dark:bg-[#2a3e2f] text-[#111813] dark:text-white hover:bg-[#e0e4e1] transition-colors">
+                                    <span class="material-symbols-outlined">local_fire_department</span>
+                                </button>
+                                <button
+                                    class="flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-[#f0f4f1] dark:bg-[#2a3e2f] text-[#111813] dark:text-white hover:bg-[#e0e4e1] transition-colors">
+                                    <span class="material-symbols-outlined">notifications</span>
+                                </button>
+                                <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-white dark:border-[#2a3e2f] shadow-sm"
+                                    data-alt="User profile avatar showing a smiling person"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXpr6di_ifdlHx_z2bW-whjMFlSqBWQhsJFUcUaTH2NcKhJ_DFUq4KbduMRLyXV4_Tgwi5TMVPG4CHaPCQYcfK0JGiN3Fnh-Y7cFD-G4Qg90UE4Qb-8tCm3hldD2Lxr8jXmiQp3GtTxVvBFlulJ2K9NI3EO-_8TLli1A_o7Th-N-UcajiiBX7l4YktED97vxUceACB8Gur0sV9EjbJ2WWhd-uH-7Z27__efm905gfjyu_9ru1hTrSQnJm5STvTRjmnu_tunU9OGJwb");'>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu Icon -->
+                        <div class="md:hidden text-[#111813] dark:text-white">
+                            <span class="material-symbols-outlined">menu</span>
+                        </div>
+                    </header>
+                </div>
+            </div>
+            <!-- Main Content Area -->
+            <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-8">
+                <div class="layout-content-container flex flex-col max-w-[1024px] flex-1 gap-8">
+                    <!-- Page Header -->
+                    <div
+                        class="flex flex-wrap justify-between items-end gap-4 p-4 rounded-3xl bg-white dark:bg-[#1a2e1f] shadow-sm border border-[#e8efe9] dark:border-[#2a3e2f]">
+                        <div class="flex min-w-72 flex-col gap-2">
+                            <h1
+                                class="text-[#111813] dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">
+                                Your Training Journey</h1>
+                            <div class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-orange-500 fill-1">bolt</span>
+                                <p class="text-[#61896b] dark:text-[#a0cba9] text-base font-medium">Keep it up! You're
+                                    on a 12-day streak.</p>
+                            </div>
+                        </div>
+                        <button
+                            class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-5 bg-[#f0f4f1] dark:bg-[#2a3e2f] text-[#111813] dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#e0e4e1] transition-colors">
+                            <span class="truncate">View Total Stats</span>
+                        </button>
+                    </div>
+                    <!-- Top Stats Row -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div
+                            class="flex flex-col gap-2 rounded-2xl p-5 bg-white dark:bg-[#1a2e1f] border border-[#dbe6de] dark:border-[#2a3e2f] shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-2 text-[#61896b] dark:text-[#a0cba9]">
+                                <span class="material-symbols-outlined text-xl">star</span>
+                                <p class="text-xs font-bold uppercase tracking-wider">Total XP</p>
+                            </div>
+                            <p class="text-[#111813] dark:text-white text-2xl font-black leading-tight">14,500</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-2 rounded-2xl p-5 bg-white dark:bg-[#1a2e1f] border border-[#dbe6de] dark:border-[#2a3e2f] shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-2 text-orange-500">
+                                <span class="material-symbols-outlined text-xl">local_fire_department</span>
+                                <p
+                                    class="text-xs font-bold uppercase tracking-wider text-[#61896b] dark:text-[#a0cba9]">
+                                    Streak</p>
+                            </div>
+                            <p class="text-[#111813] dark:text-white text-2xl font-black leading-tight">12 Days</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-2 rounded-2xl p-5 bg-white dark:bg-[#1a2e1f] border border-[#dbe6de] dark:border-[#2a3e2f] shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-2 text-[#61896b] dark:text-[#a0cba9]">
+                                <span class="material-symbols-outlined text-xl">check_circle</span>
+                                <p class="text-xs font-bold uppercase tracking-wider">Completed</p>
+                            </div>
+                            <p class="text-[#111813] dark:text-white text-2xl font-black leading-tight">42</p>
+                        </div>
+                        <div
+                            class="flex flex-col gap-2 rounded-2xl p-5 bg-white dark:bg-[#1a2e1f] border border-[#dbe6de] dark:border-[#2a3e2f] shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-2 text-[#61896b] dark:text-[#a0cba9]">
+                                <span class="material-symbols-outlined text-xl">upgrade</span>
+                                <p class="text-xs font-bold uppercase tracking-wider">Next Level</p>
+                            </div>
+                            <p class="text-[#111813] dark:text-white text-2xl font-black leading-tight">850 XP</p>
+                        </div>
+                    </div>
+                    <h2 class="text-[#111813] dark:text-white text-2xl font-bold leading-tight px-2 mt-4">Weekly
+                        Breakdown</h2>
+                    <!-- Training Pillars Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- Cardio Panel -->
+                        <div
+                            class="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-white dark:bg-[#1a2e1f] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] border-2 border-transparent hover:border-[#ff4081] transition-all duration-300">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ff4081]/10 text-[#ff4081]">
+                                        <span class="material-symbols-outlined text-2xl">directions_run</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-black text-[#111813] dark:text-white">Cardio</h3>
+                                        <p class="text-sm font-medium text-[#61896b] dark:text-[#a0cba9]">45km this week
+                                        </p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="rounded-full bg-[#ff4081] px-3 py-1 text-xs font-bold text-white shadow-sm">LVL
+                                    4</span>
+                            </div>
+                            <!-- Graph Area -->
+                            <div
+                                class="relative h-48 w-full rounded-2xl bg-[#ff4081]/5 p-4 mb-6 flex flex-col justify-end items-stretch">
+                                <div class="absolute top-4 left-4 text-xs font-bold text-[#ff4081]/60 uppercase">Heart
+                                    Rate Zones</div>
+                                <svg class="w-full h-full overflow-visible" preserveaspectratio="none"
+                                    viewbox="0 0 100 40">
+                                    <path d="M0,40 Q10,35 20,20 T40,15 T60,25 T80,10 T100,30 V40 H0 Z"
+                                        fill="rgba(255, 64, 129, 0.2)"></path>
+                                    <path d="M0,40 Q10,35 20,20 T40,15 T60,25 T80,10 T100,30" fill="none"
+                                        stroke="#ff4081" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"></path>
+                                </svg>
+                                <div class="flex justify-between mt-2 text-[10px] font-bold text-[#61896b] uppercase">
+                                    <span>Mon</span><span>Wed</span><span>Fri</span><span>Sun</span>
+                                </div>
+                            </div>
+                            <button onclick="https://jorgesantiagoplazasprieto2008-lgtm.github.io/MedigymWebPage/GymFuerzaDashBoardScreen.html"
+                                class="w-full rounded-xl bg-[#ff4081] py-3 text-sm font-bold text-white shadow-[0_4px_0_0_#c60055] hover:brightness-110 active:shadow-none active:translate-y-[4px] transition-all">
+                                Go for a Run
+                                <div id="GymCardioDashBoardScreen.html"></div>
+                            </button>
+                        </div>
+                        <!-- Strength Panel -->
+                        <div
+                            class="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-white dark:bg-[#1a2e1f] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] border-2 border-transparent hover:border-primary transition-all duration-300">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/20 text-[#0ba832]">
+                                        <span class="material-symbols-outlined text-2xl">fitness_center</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-black text-[#111813] dark:text-white">Strength</h3>
+                                        <p class="text-sm font-medium text-[#61896b] dark:text-[#a0cba9]">New PR
+                                            Unlocked!</p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="rounded-full bg-primary px-3 py-1 text-xs font-bold text-[#111813] shadow-sm">LVL
+                                    5</span>
+                            </div>
+                            <!-- Graph Area -->
+                            <div class="relative h-48 w-full rounded-2xl bg-primary/5 p-4 mb-6 flex flex-col">
+                                <div class="text-xs font-bold text-[#0ba832]/60 uppercase mb-auto">Volume Lifted</div>
+                                <div class="flex items-end justify-between gap-2 h-32 w-full px-2">
+                                    <div
+                                        class="w-full bg-[#13ec49]/30 rounded-t-lg h-[40%] group-hover:bg-[#13ec49] transition-colors relative group/bar">
+                                    </div>
+                                    <div
+                                        class="w-full bg-[#13ec49]/30 rounded-t-lg h-[60%] group-hover:bg-[#13ec49] transition-colors relative group/bar">
+                                    </div>
+                                    <div
+                                        class="w-full bg-[#13ec49]/30 rounded-t-lg h-[30%] group-hover:bg-[#13ec49] transition-colors relative group/bar">
+                                    </div>
+                                    <div
+                                        class="w-full bg-[#13ec49]/30 rounded-t-lg h-[85%] group-hover:bg-[#13ec49] transition-colors relative group/bar">
+                                    </div>
+                                    <div
+                                        class="w-full bg-[#13ec49] rounded-t-lg h-[100%] shadow-[0_0_10px_rgba(19,236,73,0.5)] relative group/bar">
+                                        <div
+                                            class="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#111813] text-white text-[10px] py-1 px-2 rounded opacity-100 md:opacity-0 group-hover/bar:opacity-100 transition-opacity whitespace-nowrap">
+                                            240kg</div>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between mt-2 text-[10px] font-bold text-[#61896b] uppercase">
+                                    <span>Sq</span><span>Bn</span><span>Dl</span><span>Oh</span><span>Pr</span>
+                                </div>
+                            </div>
+                            <button onclick="https://jorgesantiagoplazasprieto2008-lgtm.github.io/MedigymWebPage/GymFuerzaDashBoardScreen.html"
+                                class="w-full rounded-xl bg-[#111813] dark:bg-white py-3 text-sm font-bold text-white dark:text-[#111813] shadow-[0_4px_0_0_#000] dark:shadow-[0_4px_0_0_#cccccc] hover:opacity-90 active:shadow-none active:translate-y-[4px] transition-all">
+                                Lift Weights
+                                <div id="GymFuerzaDashBoardScreen.html"></div>
+                            </button>
+                        </div>
+                        <!-- Flexibility Panel -->
+                        <div
+                            class="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-white dark:bg-[#1a2e1f] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] border-2 border-transparent hover:border-[#7c4dff] transition-all duration-300">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#7c4dff]/10 text-[#7c4dff]">
+                                        <span class="material-symbols-outlined text-2xl">accessibility_new</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-black text-[#111813] dark:text-white">Flexibility</h3>
+                                        <p class="text-sm font-medium text-[#61896b] dark:text-[#a0cba9]">+12% Mobility
+                                        </p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="rounded-full bg-[#7c4dff] px-3 py-1 text-xs font-bold text-white shadow-sm">LVL
+                                    3</span>
+                            </div>
+                            <!-- Visualization Area -->
+                            <div
+                                class="relative h-48 w-full rounded-2xl bg-[#7c4dff]/5 p-4 mb-6 flex items-center justify-center">
+                                <div class="relative size-32">
+                                    <!-- Background Circle -->
+                                    <svg class="size-full -rotate-90 transform" viewbox="0 0 100 100">
+                                        <circle cx="50" cy="50" fill="none" r="40" stroke="#e0e0e0"
+                                            stroke-linecap="round" stroke-width="12"></circle>
+                                        <!-- Progress Circle -->
+                                        <circle cx="50" cy="50" fill="none" r="40" stroke="#7c4dff"
+                                            stroke-dasharray="251.2" stroke-dashoffset="62.8" stroke-linecap="round"
+                                            stroke-width="12"></circle>
+                                    </svg>
+                                    <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                        <span class="text-2xl font-black text-[#111813] dark:text-white">75%</span>
+                                        <span class="text-[10px] font-bold text-[#7c4dff] uppercase">Mobility</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="https://jorgesantiagoplazasprieto2008-lgtm.github.io/MedigymWebPage/GymFlexibilidadDashBoardScreen.html"
+                                class="w-full rounded-xl bg-[#7c4dff] py-3 text-sm font-bold text-white shadow-[0_4px_0_0_#501ab8] hover:brightness-110 active:shadow-none active:translate-y-[4px] transition-all">
+                                Start Stretching
+                            </button>
+                        </div>
+                        <!-- Yoga Panel -->
+                        <div
+                            class="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-white dark:bg-[#1a2e1f] p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] border-2 border-transparent hover:border-[#00bcd4] transition-all duration-300">
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="flex gap-4">
+                                    <div
+                                        class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00bcd4]/10 text-[#00bcd4]">
+                                        <span class="material-symbols-outlined text-2xl">self_improvement</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-black text-[#111813] dark:text-white">Yoga</h3>
+                                        <p class="text-sm font-medium text-[#61896b] dark:text-[#a0cba9]">12 Day Streak
+                                        </p>
+                                    </div>
+                                </div>
+                                <span
+                                    class="rounded-full bg-[#00bcd4] px-3 py-1 text-xs font-bold text-white shadow-sm">LVL
+                                    2</span>
+                            </div>
+                            <!-- Streak Area -->
+                            <div
+                                class="relative h-48 w-full rounded-2xl bg-[#00bcd4]/5 p-4 mb-6 flex flex-col items-center justify-center">
+                                <div class="text-xs font-bold text-[#00bcd4]/80 uppercase mb-4 w-full text-center">
+                                    Current Week Progress</div>
+                                <div class="flex justify-between w-full px-2 gap-1">
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="size-8 rounded-full bg-[#00bcd4] flex items-center justify-center text-white shadow-sm">
+                                            <span class="material-symbols-outlined text-sm">check</span>
+                                        </div>
+                                        <span class="text-[10px] font-bold text-[#61896b]">M</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="size-8 rounded-full bg-[#00bcd4] flex items-center justify-center text-white shadow-sm">
+                                            <span class="material-symbols-outlined text-sm">check</span>
+                                        </div>
+                                        <span class="text-[10px] font-bold text-[#61896b]">T</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="size-8 rounded-full bg-[#00bcd4] flex items-center justify-center text-white shadow-sm">
+                                            <span class="material-symbols-outlined text-sm">check</span>
+                                        </div>
+                                        <span class="text-[10px] font-bold text-[#61896b]">W</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2">
+                                        <div
+                                            class="size-8 rounded-full bg-white dark:bg-[#2a3e2f] border-2 border-[#00bcd4] flex items-center justify-center text-[#00bcd4]">
+                                            <span class="text-xs font-bold">4</span>
+                                        </div>
+                                        <span class="text-[10px] font-bold text-[#111813] dark:text-white">T</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 opacity-50">
+                                        <div
+                                            class="size-8 rounded-full bg-[#e0e4e1] dark:bg-[#2a3e2f] flex items-center justify-center">
+                                        </div>
+                                        <span class="text-[10px] font-bold text-[#61896b]">F</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 opacity-50">
+                                        <div
+                                            class="size-8 rounded-full bg-[#e0e4e1] dark:bg-[#2a3e2f] flex items-center justify-center">
+                                        </div>
+                                        <span class="text-[10px] font-bold text-[#61896b]">S</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-2 opacity-50">
+                                        <div
+                                            class="size-8 rounded-full bg-[#e0e4e1] dark:bg-[#2a3e2f] flex items-center justify-center">
+                                        </div>
+                                        <span class="text-[10px] font-bold text-[#61896b]">S</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="https://jorgesantiagoplazasprieto2008-lgtm.github.io/MedigymWebPage/GymYogaDashBoardScreen.html"
+                                class="w-full rounded-xl bg-[#00bcd4] py-3 text-sm font-bold text-white shadow-[0_4px_0_0_#0097a7] hover:brightness-110 active:shadow-none active:translate-y-[4px] transition-all">
+                                Continue Flow
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Bottom Banner -->
+                    <div class="w-full h-32 rounded-3xl bg-cover bg-center relative overflow-hidden group mt-4 shadow-sm"
+                        data-alt="Abstract gradient banner representing energy and flow"
+                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDURTgYtLEHB_MRCAfRZvzi8OjUHuuD4fgIRPexrBQ9k9F8HEtJFuCHh4VofDJ7QY6sAQesXZy_xMaNoRXF4uOYWbKruVyeuQdbAjtOoy6ZWgE-8suRzZFXtleU8VOfeT3dIGElW4LFNEBH2LSR7mTStqf7l2F2AtUxR0L9_Ng0w4cuSOoqVYqYWZDG8pEBAmFElEMNAA9I1cQdiWYkSwpLXgveoBF1RLTfDZ1ufeFjQHF92IGKp604f2_v0Xp-sAszuiNN54YbGGX7");'>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex flex-col justify-center px-10">
+                            <h3 class="text-white text-2xl font-black mb-1">Weekly Challenge</h3>
+                            <p class="text-white/90 font-medium">Complete 5 workouts to earn the 'Iron Will' badge.</p>
+                            <div class="mt-3 w-48 h-2 bg-white/30 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary w-3/5 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

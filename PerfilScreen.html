@@ -58,58 +58,11 @@
 
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
   <div class="flex min-h-screen">
-    <!-- SideNavBar -->
-    <aside class="w-64 flex-shrink-0 bg-white dark:bg-card-dark border-r border-border-light dark:border-border-dark">
-      <div class="flex h-full flex-col p-4">
-        <div class="flex items-center gap-2 px-3 pb-6">
-          <span class="material-symbols-outlined text-primary text-3xl">exercise</span>
-          <span class="text-xl font-bold">FitQuest</span>
-        </div>
-        <div class="flex flex-col gap-4">
-          <div class="flex items-center gap-3">
-            <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-              data-alt="User profile picture of a person working out."
-              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5nG6LCo5-XN8SzFmL_GHwDIcRoILQS1U_0GYQg0kazzRMk0lDf0Rj31eT_Biv93oyPH4mpE416mIrYn83Xl77htH0JCvvSXgXDH-G9byNmN1q2zHGcEdEvZQ8tRhclUf-db6EEtqhPTnbjt_pTxaaevzdjCd0GwH7gd7XIbHacOgYscrnwYQ_MdcADHidx7ly9Q2ee_MSfhY7CnhUNQjCStB45TSujncLipBqNySRt6e9yR4OM6kvYonWJLfibQ3kVWxPVmAI7pOU");'>
-            </div>
-            <div class="flex flex-col">
-              <h1 class="text-base font-medium leading-normal text-text-light dark:text-text-dark">Alex Trainer</h1>
-              <p class="text-sm font-normal leading-normal text-subtext-light dark:text-subtext-dark">
-                alex.trainer@email.com</p>
-            </div>
-          </div>
-          <div class="flex flex-col gap-1 mt-4">
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30" href="#">
-              <span class="material-symbols-outlined text-text-light dark:text-text-dark"
-                style="font-variation-settings: 'FILL' 1;">person</span>
-              <p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">My Profile</p>
-            </a>
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors"
-              href="#">
-              <span class="material-symbols-outlined text-text-light dark:text-text-dark">lock</span>
-              <p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Account &amp; Security
-              </p>
-            </a>
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors"
-              href="#">
-              <span class="material-symbols-outlined text-text-light dark:text-text-dark">notifications</span>
-              <p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Notifications</p>
-            </a>
-            <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors"
-              href="#">
-              <span class="material-symbols-outlined text-text-light dark:text-text-dark">tune</span>
-              <p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Preferences</p>
-            </a>
-          </div>
-        </div>
-        <div class="mt-auto flex flex-col gap-1">
-          <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-secondary-light dark:hover:bg-secondary-dark transition-colors"
-            href="#">
-            <span class="material-symbols-outlined text-text-light dark:text-text-dark">logout</span>
-            <p class="text-sm font-medium leading-normal text-text-light dark:text-text-dark">Log Out</p>
-          </a>
-        </div>
-      </div>
-    </aside>
+    <!-- Sidebar dinámico -->
+    <div id="sidebar.html"></div>
+    <!-- Carga del archivo sidebar.html -->
+    <script src="sidebar.js"></script>
+
     <!-- Main Content -->
     <main class="flex-1 p-8 overflow-y-auto">
       <div class="max-w-4xl mx-auto">
